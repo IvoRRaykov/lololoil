@@ -1,0 +1,154 @@
+/* ==============================
+   EmployeeCard
+   ============================== */
+ .employee-card {
+  margin-bottom: 10px;
+  max-width: 250px;
+
+  .btn-ocustom {
+    border-color: #ad2262;
+    color: #ffffff;
+    display: block;
+  }
+
+  .employee-card-image {
+  	position: relative;
+    overflow: hidden;
+    max-height: 250px;
+    border: 1px solid #f1f1f1;
+
+    img {
+        width: 100%;
+    }
+
+    &:after {
+      content: " ";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: transparent;
+      z-index: 1;
+    }
+  }
+
+  .employee-card-detail {
+  	opacity: 0;
+  	width: 100%;
+  	position: absolute;
+  	top: 50%;
+  	left: 0;
+  	padding: 20px 10px 55px;
+  	font-size: 14px;
+    font-weight: 300;
+  	color: #777;
+  	text-align: center;
+  	z-index: 2;
+
+  	-webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  }
+
+  .employee-card-descr {
+      color: #777;
+      text-align:center;
+      min-height: 80px;
+  }
+
+  .employee-card-name {
+    margin-top: 23px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-family: 'Dosis';
+  }
+  .employee-card-role {
+    margin-top: 4px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #aaa;
+    font-family: 'Dosis';
+  }
+}
+
+/* Hover state */
+.employee-card:hover .employee-card-image:after {
+	background: rgba(53,14,79,0.85);
+}
+
+.employee-card:hover .employee-card-detail {
+	opacity: 1;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
+.employee-card:hover .employee-card-descr {
+	color: #111;
+}
+
+.employee-social-links a:hover {
+	color: rgba(248, 248, 247, 0.64);
+}
+
+@-webkit-keyframes flipInY {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  70% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+@keyframes flipInY {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  70% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+.employee-card:hover .employee-card-image > img {
+    transition: 0.3s all ease-in;
+    -webkit-transition: 0.3s all ease-in;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}

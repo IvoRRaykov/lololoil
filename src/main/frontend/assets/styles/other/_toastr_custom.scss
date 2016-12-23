@@ -1,0 +1,13 @@
+#toast-container * {
+  font-family: 'Dosis';
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+}
+
+#toast-container > div {
+  border-radius: inherit;
+  -webkit-box-shadow: 2px 2px 7px #999999;
+  box-shadow: 2px 2px 7px #999999;
+  padding: 10px 10px 10px 40px;
+}

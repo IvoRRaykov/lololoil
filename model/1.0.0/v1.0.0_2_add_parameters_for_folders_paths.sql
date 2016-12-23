@@ -1,0 +1,2 @@
+INSERT INTO `PARAM` (`PARAM_NAME`, `PARAM_VALUE`, `DESCRIPTION`) VALUES ('IMAGES_SOURCE_PATH', 'C:\\proxiad-extranet-repository\\images', 'Images folder destination path');
+INSERT INTO `PARAM` (`PARAM_NAME`, `PARAM_VALUE`, `DESCRIPTION`) VALUES ('BASE_PROFILE_IMAGES_FOLDER_NAME', 'people', 'Folder name where will be deployed all profile pictures');

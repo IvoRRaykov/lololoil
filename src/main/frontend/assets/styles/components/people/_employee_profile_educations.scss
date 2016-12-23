@@ -1,0 +1,29 @@
+.employee-profile-educations {
+  padding: 40px 10px;
+  background-color: rgba(53, 14, 79, 0.85);
+  color: #ffffff;
+  min-height: 200px;
+
+  .title {
+    text-transform: uppercase;
+    font-family: 'Raleway';
+    font-weight: 800;
+    letter-spacing: 10px;
+    color: #dadbdc;
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+
+  .education {
+    border-top: 1px solid #ffffff;
+
+    .school {
+      font-weight: 500;
+      font-family: 'Raleway';
+    }
+
+    .description, .years, .degree, .field-of-study {
+      font-size: 0.8em;
+    }
+  }
+}

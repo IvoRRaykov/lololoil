@@ -1,0 +1,59 @@
+.employee-profile-intro {
+
+  background: url('/assets/images/bg-profile-intro.png') no-repeat;
+  color: #fbfbfb;
+  background-size: cover;
+
+  div.bg-wrapper {
+    background-color: rgba(14,37,78,0.85);
+    min-height: 450px;
+    padding: 10px 0;
+  }
+
+  div.content-wrapper {
+    padding: 40px 0;
+  }
+
+  .name {
+    font-size: 1em;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Dosis';
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+
+  .job-position {
+    font-size: 1.5em;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    line-height: 1.3em;
+    font-family: 'Open Sans';
+    margin-bottom: 40px;
+  }
+
+  .description {
+    text-align: justify;
+
+    hr {
+      background-color: white;
+    }
+  }
+
+  img {
+    width: 100%;
+    border-radius: 100%;
+    margin: 10px 0;
+    box-shadow: -3px 4px 13px #0c2142;
+  }
+
+  img.small-profile-pic {
+    max-width: 200px;
+  }
+
+  img.big-profile-pic {
+    max-width: 400px;
+  }
+}

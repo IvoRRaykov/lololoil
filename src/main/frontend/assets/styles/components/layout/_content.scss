@@ -1,0 +1,251 @@
+/***
+Page content
+***/
+
+/* Page title */
+
+.page-title {
+	padding: 0px;
+	font-size: 1.3em;
+	line-height: 26px;
+	display: block;
+	color: #641584 !important;
+	margin: 0px 0px 20px 0px;
+	font-family: "Raleway";
+	text-transform: uppercase;
+	font-weight: 700;
+
+	/* subtitle */
+	small {
+		font-size: 0.6em;
+		letter-spacing: 1px;
+		font-weight: 500;
+		color: #2480e2;
+	}
+}
+
+/* Page breadcrumb */
+
+.page-bar {
+	padding: 0px;
+	background-color: #ffffff;
+	margin-bottom: 20px;
+
+	@include clearfix();
+
+	.page-breadcrumb {
+		display: inline-block;
+		float: left;
+		padding: 10px 6px;
+		margin: 0;
+		list-style: none;
+    background-color: white;
+    border-radius: none;
+		font-family: 'Open Sans';
+    font-weight: 300;
+
+		> li  {
+			display: inline-block;
+
+			.ie8 & {
+				margin-right: 1px;
+			}
+
+			> a,
+			> span {
+				color: #888;
+				font-size: 13px;
+				text-shadow:none;
+			}
+
+			> i {
+				margin-right: 5px;
+				color: #aaa;
+				font-size: 14px;
+				text-shadow:none;
+			}
+
+			> i[class^="icon-"],
+	        > i[class*="icon-"] {
+	        	color: darken(#999, 5%);
+	        }
+		}
+	}
+
+	.page-toolbar {
+		display: inline-block;
+		float: right;
+
+		.btn-fit-height {
+			@include border-radius(0 $general-border-radius $general-border-radius 0);
+			padding-top: 9px;
+			padding-bottom: 9px;
+
+			.page-md & {
+				padding-top: 11px;
+				padding-bottom: 10px;
+				box-shadow: none !important;
+			}
+		}
+
+		.btn {
+
+			&.btn-default {
+				border-color: #eee;
+				color: #999;
+
+				> i {
+					color: #999;
+				}
+			}
+
+			&.btn-sm {
+				margin-top: 0px;
+			}
+		}
+
+		.btn-dashboard-daterange {
+			padding: 8px 16px 8px 16px;
+
+			> i[class^="icon-"] {
+				position: relative;
+				font-size: 20px;
+				@include opacity(0.8);
+				top: 2px;
+			}
+
+			> i.fa-angle-down {
+				font-size: 16px;
+				@include opacity(0.8);
+			}
+		}
+	}
+}
+
+/* Page content */
+
+.page-content {
+	margin-top: 0px;
+	padding: 0px;
+	background-color: #fff;
+	font-family: 'Karla';
+  font-size: 0.95em;
+  font-weight: normal;
+
+	.page-container-bg-solid & {
+		background: $page-content-solid-bg-color;
+	}
+
+	.page-full-width & {
+		margin-left: 0px !important;
+	}
+}
+
+@include media-breakpoint-up(md) {
+
+	/* Page content */
+	.page-content-wrapper {
+		float: left;
+		width: 100%;
+
+		.page-content {
+			margin-left: $sidebar-width;
+			margin-top: 0px;
+			min-height: $page-content-min-height;
+			padding: 20px 0 50px 0;
+
+			&.no-min-height {
+				min-height: auto;
+			}
+
+			.page-sidebar-fixed.page-sidebar-hover-on & {
+				margin-left: $sidebar-collapsed-width;
+			}
+
+			.page-sidebar-reversed & {
+				margin-left: 0 !important;
+				margin-right: $sidebar-width !important;
+			}
+
+			.page-sidebar-reversed.page-sidebar-fixed.page-sidebar-hover-on & {
+				margin-left: 0;
+				margin-right: $sidebar-collapsed-width;
+			}
+
+			.page-sidebar-reversed.page-sidebar-closed  & {
+				margin-left: 0 !important;
+				margin-right: $sidebar-collapsed-width !important;
+			}
+
+			.page-sidebar-closed  & {
+				margin-left: $sidebar-collapsed-width !important;
+			}
+
+			.page-sidebar-closed.page-sidebar-hide & {
+				margin-left: 0 !important;
+			}
+
+			.page-sidebar-closed.page-sidebar-reversed.page-sidebar-hide & {
+				margin-right: 0 !important;
+			}
+
+			.page-full-width & {
+				margin-left: 0px !important;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+
+	/* Boxed page container  */
+	.page-boxed > .container {
+		width: 100%;
+ 		max-width: none !important;
+ 		margin: 0 !important;
+ 		padding: 0 !important;
+ 	}
+
+ 	/* Page content */
+	.page-content-wrapper {
+		.page-content {
+			margin: 0px !important;
+			padding: 20px !important;
+			min-height: 280px;
+		}
+	}
+}
+
+@include media-breakpoint-only(sm) {
+
+	/* Boxed page container */
+	.page-boxed > .container {
+ 		margin: auto !important;
+ 	}
+}
+
+@include media-breakpoint-down(sm) {
+
+	/* Page content */
+	.page-content-wrapper {
+		.page-content {
+			padding: 20px 10px 50px 10px !important;
+			overflow: hidden;
+
+			/* Page title */
+			.page-title {
+				margin-bottom: 15px;
+				font-size: 15px;
+
+				small {
+					font-size: 13px;
+					padding-top: 3px;
+				}
+			}
+
+			.page-bar .page-breadcrumb > li > a, .page-bar .page-breadcrumb > li > span {
+				font-size: 10px;
+			}
+		}
+	}
+}

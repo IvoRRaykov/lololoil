@@ -1,0 +1,302 @@
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~bootstrap/scss/variables';
+
+.menu-wrap {
+	display: none;
+}
+
+.menu-wrap a {
+	color: #b8b7ad;
+}
+
+.menu-wrap a:hover,
+.menu-wrap a:focus {
+	color: #c94e50;
+}
+
+.content {
+	position: relative;
+	background: #b4bad2;
+}
+
+.content::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.3);
+	content: '';
+	opacity: 0;
+	-webkit-transform: translate3d(100%,0,0);
+	transform: translate3d(100%,0,0);
+	-webkit-transition: opacity 0.4s, -webkit-transform 0s 0.4s;
+	transition: opacity 0.4s, transform 0s 0.4s;
+}
+
+/* Menu Button */
+.menu-button {
+	position: relative;;
+  display: block;
+	z-index: 1000;
+	padding: 0;
+	width: 34px;
+	border: none;
+	color: transparent;
+	background: transparent;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes rotateIn {
+  from {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+    transform: rotate3d(0, 0, 1, -200deg);
+  }
+
+  to {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+    transform: rotate3d(0, 0, 1, -200deg);
+  }
+
+  to {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.menu-button:focus {
+	outline: none;
+}
+
+.menu-button:hover, .close-button:hover, #module-menu .card:hover {
+  cursor: pointer;
+}
+
+.menu-button:hover {
+	-webkit-animation-name: rotateIn;
+	animation-name: rotateIn;
+}
+
+.menu-button:hover, .close-button:hover {
+	opacity: 0.6;
+}
+
+/* Close Button */
+.close-button {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 1em;
+	top: 1em;
+	overflow: hidden;
+	text-indent: 16px;
+	border: none;
+	z-index: 1001;
+	background: transparent;
+	color: transparent;
+  margin-right: 15px;
+}
+
+.close-button::before,
+.close-button::after {
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 100%;
+	top: 0;
+	left: 50%;
+	background: #888;
+}
+
+.close-button::before {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.close-button::after {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+/* Menu */
+.menu-wrap {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 1001;
+	width: 100%;
+	height: 160px;
+	font-size: 1.15em;
+	-webkit-transform: translate3d(0,160px,0);
+	transform: translate3d(0,160px,0);
+	-webkit-transition: -webkit-transform 0.4s;
+	transition: transform 0.4s;
+}
+
+.menu {
+	position: absolute;
+	width: 100%;
+	z-index: 1000;
+	text-align: center;
+	top: 50%;
+	padding: 0 1.5em;
+	-webkit-transform: translate3d(0,-50%,0);
+	transform: translate3d(0,-50%,0);
+}
+
+.module-list .container-fluid,
+.close-button {
+	opacity: 0;
+	-webkit-transform: translate3d(0,200px,0);
+	transform: translate3d(0,200px,0);
+	-webkit-transition: opacity 0.4s, -webkit-transform 0.4s;
+	transition: opacity 0.4s, transform 0.4s;
+}
+
+.module-list .container-fluid {
+	display: inline-block;
+	padding: 0.8em;
+}
+
+/* Morph Shape */
+.morph-shape {
+	position: absolute;
+	width: 100%;
+	width: calc(100% + 400px);
+	height: 100%;
+	top: 0;
+	left: -20px;
+	fill: url(#lgrad);
+	-webkit-transition: -webkit-transform 0.4s;
+	transition: transform 0.8s;
+	-webkit-transform: translate3d(-400px,0,0);
+	transform: translate3d(-400px,0,0);
+
+  svg {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2e6fbf+0,0d4b71+100 */
+    background: rgba(46,111,191,0.8); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(46,111,191,0.8) 0%, rgba(13,75,113,0.8) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(46,111,191,0.8) 0%,rgba(13,75,113,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(46,111,191,0.8) 0%,rgba(13,75,113,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(46,111,191,0.8)', endColorstr='rgba(13,75,113,0.8)',GradientType=0 ); /* IE6-9 */
+
+  }
+}
+
+/* Shown menu */
+.show-menu .menu-wrap,
+.show-menu .module-list .container-fluid,
+.show-menu .close-button,
+.show-menu .morph-shape,
+.show-menu .content::before {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.show-menu .menu-wrap,
+.show-menu .content::before {
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+
+.show-menu .menu-wrap {
+	display: block;
+}
+
+#module-menu {
+  width: 100%;
+  display: block;
+  position: fixed;
+
+	.card {
+		background-color: inherit;
+		max-width: 150px;
+		border: none;
+
+		&:hover {
+			top: -10px;
+    	transition: top 0.5s;
+    	-webkit-transition: top 0.5s;
+		}
+
+		.card-img-top {
+			width: 100px;
+		}
+
+		.card-title {
+			color: white;
+			font-family: 'Dosis';
+			font-weight: 300;
+			font-style: normal;
+		}
+	}
+}
+
+.show-menu .module-list .container-fluid,
+.show-menu .close-button,
+.show-menu .content::before {
+	opacity: 1;
+}
+
+.module-list .container-fluid {
+	width: 100%;
+}
+
+.show-menu .module-list .card:nth-child(2) {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.15s;
+}
+
+.show-menu .module-list .card:nth-child(3) {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.2s;
+}
+
+.show-menu .module-list .card:nth-child(4) {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.25s;
+}
+
+.show-menu .close-button {
+	-webkit-transition-delay: 0.3s;
+	transition-delay: 0.3s;
+}
+
+.show-menu .content::before {
+	-webkit-transition: opacity 0.4s;
+	transition: opacity 0.4s;
+}
+
+@include media-breakpoint-only(xs) {
+  .menu-wrap {
+      height: 225px;
+      top: 150%;
+  }
+
+  .show-menu .menu-wrap {
+		top: inherit;
+	}
+
+  #module-menu .card .card-img-top {
+    width: 65px;
+  }
+}

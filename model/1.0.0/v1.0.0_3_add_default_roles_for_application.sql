@@ -1,0 +1,3 @@
+INSERT INTO `ROLE` (`NAME`, `DESCRIPTION`) VALUES ('ROLE_SUPER_ADMIN', 'Super admin role will have access to each part of the application. It represents the main role');
+INSERT INTO `ROLE` (`NAME`, `DESCRIPTION`) VALUES ('ROLE_ADMINISTRATOR', 'Administrator role will have generic access to the admin panel of the application');
+INSERT INTO `ROLE` (`NAME`, `DESCRIPTION`) VALUES ('ROLE_USER', 'User role will have access only to the front-end part of the application. Each registered user must have this role.');

@@ -1,0 +1,37 @@
+#welcomePage {
+  #module-menu {
+      position: initial;
+  }
+
+  header {
+    height: 70px;
+    background: #ffffff;
+    line-height: 70px;
+
+    img {
+      width: 100%;
+      max-width: 180px;
+      min-width: 110px;
+    }
+
+    .login {
+      font-family: 'Karla';
+      font-weight: 500;
+      letter-spacing: 1px;
+      font-size: 0.8em;
+      position: relative;
+      top: -11px;
+      margin-right: 20px;
+    }
+
+    .language {
+      display: inline-block;
+      line-height: 90px;
+
+      .flag:hover {
+        cursor: pointer;
+        transform: scale(0.9);
+      }
+    }
+  }
+}

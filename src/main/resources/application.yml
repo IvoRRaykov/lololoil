@@ -1,0 +1,95 @@
+debug: true
+
+# ===============================
+# = SERVER CONFIG
+# ===============================
+server:
+  servletPath: /*
+  port: 9090
+ 
+# ===============================
+# = LOGGING LEVEL
+# ===============================
+logging:
+  level:
+    org:
+      springframework:
+        web: INFO
+        security: DEBUG
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+
+# ===============================
+# = DATA SOURCE
+# ===============================
+
+# Set here configurations for the database connection
+
+spring:
+  datasource:
+    # Connection url for the database "proxiad-extranet"
+    url: jdbc:mysql://localhost:3306/proxiad-extranet?useSSL=false
+
+    # Username and password
+    username: root
+    password: root
+
+    # Keep the connection alive if idle for a long time (needed in production)
+    testWhileIdle: true
+    validationQuery: SELECT 1
+    
+    # Default auto-commit false
+    defaultAutoCommit: false
+
+# ===============================
+# = JPA / HIBERNATE
+# ===============================
+
+# Use spring.jpa.properties.* for Hibernate native properties (the prefix is
+# stripped before adding them to the entity manager).
+  jpa:
+    # Show or not log for each sql query
+    show-sql: true
+    
+    properties:
+      hibernate:
+        # Add Spring Session Context
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+        # Show the SQL
+        show_sql: true
+        # Use SQL Comments
+        use_sql_comments: true
+        # Format the SQL
+        format_sql: true
+        # Configger the Hibernate logger level
+        type: trace
+
+    hibernate:
+      # Hibernate ddl auto (create, create-drop, update): with "update" the database
+      # schema will be automatically updated accordingly to java entities found in the project
+      ddl-auto: validate
+
+      # Naming strategy
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+
+      # Allows Hibernate to generate SQL optimized for a particular DBMS
+      dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+# ===============================
+# = JACKSON
+# ===============================
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+
+# ===============================
+# = SPRING SECURITY BASIC CONFIG
+# ===============================
+#security:
+#  user:
+#    name: admin
+#    password: admin

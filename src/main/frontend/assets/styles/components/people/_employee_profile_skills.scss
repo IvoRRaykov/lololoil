@@ -1,0 +1,31 @@
+.employee-profile-skills {
+  padding: 40px 10px;
+  background-color: rgba(53, 14, 79, 0.85);
+  color: #ffffff;
+  min-height: 200px;
+
+  .title {
+    text-transform: uppercase;
+    font-family: 'Raleway';
+    font-weight: 800;
+    letter-spacing: 10px;
+    color: #dadbdc;
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+
+  .category-skill {
+    margin-bottom: 15px;
+
+    .category-name {
+      margin-bottom: 20px;
+      font-family: 'Dosis';
+      font-weight: 300;
+      letter-spacing: 3px;
+    }
+
+    .skill-title {
+      border-top: 1px solid white;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.btn-ocustom {
+  color: #114366;
+  border-radius: 0;
+  border: 2px solid;
+  background: transparent;
+  transition: all 0.3s;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 12px;
+
+  &:hover, &:focus {
+    border-color: #3a526a !important;
+    background: #3a526a;
+    color: #fff;
+  }
+}

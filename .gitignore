@@ -1,0 +1,8 @@
+src/main/frontend/node_modules/
+.classpath
+.project
+.settings/
+target/
+src/main/resources/static/
+*.bak
+npm-debug.log
